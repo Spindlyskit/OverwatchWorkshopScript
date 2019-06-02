@@ -1,0 +1,32 @@
+usevar global A;
+usevar player A;
+
+const boost = Vector(0, 1, 0);
+const speed = 10;
+var player.hasDoubleJump;
+
+rule 'Init':
+	Event.player() {
+		player.hasDoubleJump = true;
+	};
+
+rule 'Do double jump':
+	Event.player()
+	if (
+		player.hasDoubleJump;
+		player.getAltitude() > 0.8;
+		player.isButtonHeld(Button.jump);
+		player.hasDoubleJump;
+	) {
+		player.applyImpulse(boost, speed, true, false);
+		player.hasDoubleJump = false;
+	};
+
+rule 'Reset double jump when on ground':
+	Event.player()
+	if (
+		player.isOnGround();
+		player.hasDoubleJump == false;
+	) {
+		player.hasDoubleJump = true;
+	};

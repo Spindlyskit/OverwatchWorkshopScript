@@ -1,0 +1,25 @@
+{
+  "name": "ows",
+  "version": "0.1.0",
+  "description": "A simple scripting language that compiles to the Overwatch workshop",
+  "main": "./src/cli.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "Overwatch",
+    "workshop",
+    "language"
+  ],
+  "author": "Spindlyskit",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "common-tags": "^1.8.0",
+    "moo": "^0.5.0"
+  },
+  "bin": "./src/cli.js"
+}
