@@ -1,6 +1,5 @@
 const BaseParser = require('./BaseParser');
 const { keywords, operators } = require('./Elements/Constants');
-const types = require('./Elements/Types');
 
 const TRUE = { type: 'boolean', value: 'true' };
 const FALSE = { type: 'boolean', value: 'false' };
@@ -14,7 +13,7 @@ const PRECEDENCE = {
 
 class Parser extends BaseParser {
 	constructor(data) {
-		super(data, keywords, operators, types);
+		super(data, keywords, operators);
 	}
 
 	// Simple function that parses the top level of the program

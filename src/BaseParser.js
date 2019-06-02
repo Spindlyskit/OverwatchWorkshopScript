@@ -1,10 +1,9 @@
 const Lexer = require('./Lexer');
 
 class BaseParser {
-	constructor(data, keywords, operators, types) {
+	constructor(data, keywords, operators) {
 		const lexer = Lexer(keywords, operators);
 		this.keywords = keywords;
-		this.types = types;
 		lexer.reset(data);
 		this.lexer = lexer;
 
